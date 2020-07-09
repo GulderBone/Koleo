@@ -43,15 +43,15 @@ class MainActivity : AppCompatActivity() {
         queue.add(stringRequest)
 
         find.setOnClickListener{
-            val text = stationName.text.toString()
-            val station = stations.first {
+            val text = fromStation.editText?.text.toString()
+            val station = stations.firstOrNull {
                 it.name == text
             }
-            println(station.latitude.toString())
-            println(station.longitude.toString())
-
-            latitude.text = station.latitude.toString()
-            longitude.text = station.longitude.toString()
+            if (station != null ) {
+                latitude.text = station.latitude.toString()
+            } else {
+                latitude.text = "wiel błąd"
+            }
         }
     }
 }
