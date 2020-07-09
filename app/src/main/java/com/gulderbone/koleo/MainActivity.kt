@@ -9,6 +9,7 @@ import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.gulderbone.koleo.models.Station
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,6 +42,16 @@ class MainActivity : AppCompatActivity() {
         }
         queue.add(stringRequest)
 
+        find.setOnClickListener{
+            val text = stationName.text.toString()
+            val station = stations.first {
+                it.name == text
+            }
+            println(station.latitude.toString())
+            println(station.longitude.toString())
 
+            latitude.text = station.latitude.toString()
+            longitude.text = station.longitude.toString()
+        }
     }
 }
