@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/fromStation"
+        android:id="@+id/fromStationInput"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -22,7 +22,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/toStation"
+        android:id="@+id/toStationInput"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
         app:boxBackgroundMode="filled"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fromStation">
+        app:layout_constraintTop_toBottomOf="@+id/fromStationInput">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -47,10 +47,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toStation" />
+        app:layout_constraintTop_toBottomOf="@+id/toStationInput" />
 
     <TextView
-        android:id="@+id/latitude"
+        android:id="@+id/distanceTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dystans"
