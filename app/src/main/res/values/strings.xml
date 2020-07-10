@@ -3,4 +3,6 @@
     <string name="showDistanceText">Wyświetl dystans</string>
     <string name="toStationText">do</string>
     <string name="fromStationText">z</string>
+    <string name="stationNotFound">Nie rozpoznano podanej stacji</string>
+    <string name="distance">Dystans</string>
 </resources>
