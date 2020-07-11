@@ -64,9 +64,13 @@ class StationsDao(context: Context) {
     }
 
     private fun getStationsDataFromApi(callback: ApiRequestCallback) {
-        val url = "https://koleo.pl/api/v2/main/stations"
+        val stationsDataRequest = prepareStationsDataRequest(callback)
+        requestQueue.add(stationsDataRequest)
+    }
 
-        val stringRequest = object : StringRequest(
+    private fun prepareStationsDataRequest(callback: ApiRequestCallback): StringRequest {
+        val url = "https://koleo.pl/api/v2/main/stations"
+        return object : StringRequest(
             Method.GET, url,
             Response.Listener<String> { response ->
                 stations = gson.fromJson(response, stationsArrayType)
@@ -81,7 +85,6 @@ class StationsDao(context: Context) {
                 return headers
             }
         }
-        requestQueue.add(stringRequest)
     }
 
     private fun getStationsDataFromCachedFile(callback: ApiRequestCallback) {

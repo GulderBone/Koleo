@@ -5,4 +5,6 @@
     <string name="fromStationText">z</string>
     <string name="stationNotFound">Nie rozpoznano podanej stacji</string>
     <string name="distance">Dystans</string>
+    <string name="startingStationNotFound">Nie znaleziono stacji startowej</string>
+    <string name="destinationStationNotFound">Nie znaleziono stacji końcowej</string>
 </resources>

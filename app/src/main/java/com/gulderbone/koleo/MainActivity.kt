@@ -45,11 +45,17 @@ class MainActivity : AppCompatActivity() {
         val toStation = dao.stations.firstOrNull {
             it.name == toStationText
         }
-        if (fromStation != null && toStation != null) {
-            val distance = calculateDistanceBetweenStations(fromStation, toStation)
-            distanceTextView.text = "${String.format("%.2f", distance)} km"
-        } else {
-            distanceTextView.text = getString(R.string.stationNotFound)
+        when {
+            fromStation == null -> {
+                distanceTextView.text = getString(R.string.startingStationNotFound)
+            }
+            toStation == null -> {
+                distanceTextView.text = getString(R.string.destinationStationNotFound)
+            }
+            else -> {
+                val distance = calculateDistanceBetweenStations(fromStation, toStation)
+                distanceTextView.text = "${String.format("%.2f", distance)} km"
+            }
         }
     }
 
